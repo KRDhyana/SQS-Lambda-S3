@@ -4,10 +4,10 @@
 This Terraform project demonstrates how to use Terraform to deploy AWS resources for an application that reads messages from an SQS queue using a Lambda function and puts the messages as JSON objects into an S3 bucket.
 ## Prerequisites
 Before you begin, ensure you have the following:
-- An AWS Account
-- AWS CLI installed and configured with appropriate credentials.
-- Terraform installed
 - Visual Studio Code 
+- An AWS Account and an AWS IAM user with the appropriate permissions
+- AWS CLI installed and configured with appropriate credentials.
+- Setup Terraform in Visual Studio Code
 
 ## Installation
 
@@ -40,12 +40,9 @@ terraform apply
 ```
 Review the plan, and if everything looks good, type `yes` to confirm and deploy the resources.
 
-### 4. Test the Integration
-- Send messages to the created SQS queue using AWS CLI or SDK.
-- Monitor the S3 bucket for JSON objects representing the messages.
 ## Testing the Function
 ### 1. *Add Messages to Your Queue:*
-- You can add messages to your SQS. UseAWSCLIorSDKtosendatest message to the SQS queue. 
+- You can add messages to your SQS. Use AWS CLI or SDK to send a test message to the SQS queue. 
 
 ### 2. *Monitor the Lambda Function:*
 - Navigate to your Lambda Function in AWS portal.
@@ -53,7 +50,9 @@ Review the plan, and if everything looks good, type `yes` to confirm and deploy 
 
 ### 3. *Verify S3 Bucket:*
 - Navigate to your S3 Bucket in the AWS portal.
-- Check if the messages are written correctly as JSON files.
+- Select the json object and then click on OPEN button. The s3 object will be downloaded to your local machine.
+- Now open the file and you will be able to see the message that you have passed to SQS.
+
 
 
 ## Cleanup
