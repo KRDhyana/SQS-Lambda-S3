@@ -39,7 +39,7 @@ resource "aws_iam_role_policy" "test_policy" {
         "s3:PutObject"
         ],
         Effect   = "Allow"
-        "Resource": "*"
+        "Resource": "arn:aws:s3:::mytask-terraform-s3-bucket1/*"
       },
       {
         Action = [
