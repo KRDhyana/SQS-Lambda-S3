@@ -9,7 +9,11 @@ def lambda_handler(event, context):
 
         # Extract message ID to use as filename
         filename = event['Records'][0]['messageId']
-
+        
+        # Write message to a JSON file in /tmp directory
+        with open("/tmp/sqs.json", "w") as f:
+            f.write(message)
+            
         # Upload the JSON file to S3 bucket
         s3 = boto3.resource('s3')
         bucket_name = 'mytask-terraform-s3-bucket1'
